@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
+
+// Todo: Confimr sign up screen needs to be edited...telling user
+// to check their email for confirmation code
+
+// Email needs to be edited for awesomeness
+
+// TODO: or a note or something  - At first, the app will fetch a hardcoded
+// array of items from the function. The the function will
+//  make an asynchronous HTTP request to another API to
+//  retrieve data and return it to the client.
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <h1>CODE FREQUENCY AMPERSEND</h1>
+    <AmplifySignOut />
     </div>
   );
 }
 
-export default App;
+export default withAuthenticator(App);

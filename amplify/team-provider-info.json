@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ampersend-dev-210359-authRole",
+      "UnauthRoleArn": "arn:aws:iam::443433924981:role/amplify-ampersend-dev-210359-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::443433924981:role/amplify-ampersend-dev-210359-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-ampersend-dev-210359-deployment",
+      "UnauthRoleName": "amplify-ampersend-dev-210359-unauthRole",
+      "StackName": "amplify-ampersend-dev-210359",
+      "StackId": "arn:aws:cloudformation:us-east-1:443433924981:stack/amplify-ampersend-dev-210359/d976d310-18c1-11eb-9cb3-12409d333fbd",
+      "AmplifyAppId": "d1w3jfsvftbdcx"
+    },
+    "categories": {
+      "auth": {
+        "ampersend5f33afd3": {}
+      }
+    }
+  }
+}
