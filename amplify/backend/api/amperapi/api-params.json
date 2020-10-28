@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/coins",
+            "lambdaFunction": "cryptkeeper",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/coins"
+        }
+    ],
+    "resourceName": "amperapi",
+    "apiName": "amperapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "cryptkeeper"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-ampersend-dev-210359-authRole",
+        "unAuthRoleName": "amplify-ampersend-dev-210359-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "cryptkeeper",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
