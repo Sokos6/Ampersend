@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+import { API } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 
 // Todo: Confimr sign up screen needs to be edited...telling user
@@ -11,10 +13,29 @@ import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 //  retrieve data and return it to the client.
 
 function App() {
+  const [coins, updateCoins] = useState([]);
+
+  async function fetchCoins() {
+    const data = await API.get('amperapi', '/coins');
+    updateCoins(data.coins);
+  }
+
+  useEffect(() => {
+    fetchCoins();
+  }, []);
+
   return (
-    <div className="App">
-    <h1>CODE FREQUENCY AMPERSEND</h1>
-    <AmplifySignOut />
+    <div className='App'>
+      <h1>CODE FREQUENCY AMPERSEND</h1>
+      {coins.map((coin, index) => (
+        <div key={index}>
+          <h2>
+            {coin.name} - {coin.symbol}
+          </h2>
+          <h5>${coin.price_usd}</h5>
+        </div>
+      ))}
+      <AmplifySignOut />
     </div>
   );
 }
